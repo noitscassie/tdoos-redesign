@@ -5,6 +5,7 @@ const chai = require('chai');
 const Scraper = require('./../../app/lib/scraper');
 
 const fakeTextEntry = helpers.fakeTextEntry;
+const fakePage = helpers.fakePage;
 const expect = chai.expect;
 
 
@@ -28,8 +29,16 @@ describe('Scraper', () => {
     it('returns a hash with a word and definition', () => {
       expect(scraper.getEntry(fakeTextEntry)).to.eql({
         word: 'kuebiko',
-        definition: 'n. some definition'
+        definition: 'n. some definition',
       });
+    });
+  });
+  describe('getEntries', () => {
+    it('returns an iterable object', () => {
+      expect(scraper.getEntries(fakePage)).to.be.iterable;
+    });
+    it('returns an object with a length of 2', () => {
+      expect(scraper.getEntries(fakePage).length).to.eql(2);
     });
   });
 });
