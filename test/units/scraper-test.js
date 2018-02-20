@@ -2,7 +2,7 @@
 
 const helpers = require('./../helpers');
 const chai = require('chai');
-const Scraper = require('./../../app/scraper');
+const Scraper = require('./../../app/lib/scraper');
 
 const fakeTextEntry = helpers.fakeTextEntry;
 const expect = chai.expect;
