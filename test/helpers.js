@@ -3,9 +3,9 @@
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
-const fakeEntry = new JSDOM('<div class="post text"><a herf="#">Some text</a><h2 class="title"><a href="#">kuebiko</a></h2><div class="content"><p><i>n</i>. a definition of the word</p></div></div>');
+const fakeTextEntry = new JSDOM('<div class="post text"><a herf="#">Some text</a><h2 class="title"><a href="#">kuebiko</a></h2><div class="content"><p><i>n</i>. some definition</p></div></div>');
 
-module.exports.fakeEntry = fakeEntry;
+module.exports.fakeTextEntry = fakeTextEntry;
 // global.window = document.defaultView;
 
 // <div class="post text">
