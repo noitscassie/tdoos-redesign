@@ -4,7 +4,8 @@
   "description": "Project to redesign [The Dictionary Of Obscure Sorrows](http://www.dictionaryofobscuresorrows.com/) as a SPA using Node and React.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/* --exit"
+    "test": "mocha test/* --exit",
+    "linter": "./node_modules/.bin/eslint app/* test/*"
   },
   "repository": {
     "type": "git",
