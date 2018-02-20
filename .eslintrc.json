@@ -24,7 +24,8 @@
       "ignoreStrings": true,
       "ignoreComments": true
     }],
-    "no-tabs": 0
+    "no-tabs": 0,
+    "object-curly-spacing": 0
   }
 
 }
