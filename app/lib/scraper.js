@@ -14,6 +14,10 @@ class Scraper {
     let definition = this.getDefinition(entry);
     return { word, definition };
   }
+
+  getEntries(page) {
+    return page.window.document.getElementsByClassName('post text');
+  }
 }
 
 module.exports = Scraper;
