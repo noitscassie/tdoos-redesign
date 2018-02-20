@@ -8,6 +8,12 @@ class Scraper {
   getDefinition(entry) {
     return entry.window.document.querySelector('.content').textContent;
   }
+
+  getEntry(entry) {
+    let word = this.getWord(entry);
+    let definition = this.getDefinition(entry);
+    return { word, definition };
+  }
 }
 
 module.exports = Scraper;
