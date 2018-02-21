@@ -4,7 +4,7 @@ const helpers = require('./../helpers');
 const chai = require('chai');
 const Scraper = require('./../../app/lib/scraper');
 
-const fakeTextEntry = helpers.fakeTextEntry;
+const fakeTextEntry = helpers.fakeTextEntry.window.document.querySelectorAll('.post.text')[0];
 const fakePage = helpers.fakePage;
 const expect = chai.expect;
 
@@ -44,6 +44,13 @@ describe('Scraper', () => {
   describe('getPageEntries', () => {
     it('returns an array', () => {
       expect(scraper.getPageEntries(fakePage)).to.be.an('array');
+    });
+    it('returns an array of only two objects', () => {
+      expect(scraper.getPageEntries(fakePage).length).to.eql(2);
+    });
+    it('has a first element with a word key that has value \'kuebiko\'', () => {
+      let entries = scraper.getPageEntries(fakePage);
+      expect(entries[0].word).to.eql('kuebiko');
     });
   });
 });
