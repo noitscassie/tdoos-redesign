@@ -15,7 +15,7 @@ class Scraper {
     return { word, definition };
   }
 
-  getEntries(page) {
+  getPageEntries(page) {
     return page.window.document.getElementsByClassName('post text');
   }
 }

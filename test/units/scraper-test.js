@@ -33,12 +33,12 @@ describe('Scraper', () => {
       });
     });
   });
-  describe('getEntries', () => {
+  describe('getPageEntries', () => {
     it('returns an iterable object', () => {
-      expect(scraper.getEntries(fakePage)).to.be.iterable;
+      expect(scraper.getPageEntries(fakePage)).to.be.iterable;
     });
     it('returns an object with a length of 2', () => {
-      expect(scraper.getEntries(fakePage).length).to.eql(2);
+      expect(scraper.getPageEntries(fakePage).length).to.eql(2);
     });
   });
 });
