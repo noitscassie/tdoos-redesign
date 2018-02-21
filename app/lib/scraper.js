@@ -2,11 +2,17 @@
 
 class Scraper {
   getWord(entry) {
-    return entry.window.document.querySelector('.title').textContent;
+    let childNodes = entry.childNodes;
+    for (let node of childNodes) {
+      if (node.className === 'title') { return node.textContent };
+    };
   }
 
   getDefinition(entry) {
-    return entry.window.document.querySelector('.content').textContent;
+    let childNodes = entry.childNodes;
+    for (let node of childNodes) {
+      if (node.className === 'content') { return node.textContent };
+    };
   }
 
   getEntry(entry) {
@@ -16,14 +22,15 @@ class Scraper {
   }
 
   getEntryElements(page) {
-    return page.window.document.getElementsByClassName('post text');
+    return page.window.document.querySelectorAll('.post.text');
   }
 
   getPageEntries(page) {
     let entryElements = this.getEntryElements(page);
     let entries = []
     for (let element of entryElements) {
-      entries.push(element);
+      let entry = this.getEntry(element);
+      entries.push(entry);
     }
     return entries;
   }
