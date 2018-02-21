@@ -33,12 +33,17 @@ describe('Scraper', () => {
       });
     });
   });
-  describe('getPageEntries', () => {
+  describe('getEntryElements', () => {
     it('returns an iterable object', () => {
-      expect(scraper.getPageEntries(fakePage)).to.be.iterable;
+      expect(scraper.getEntryElements(fakePage)).to.be.iterable;
     });
     it('returns an object with a length of 2', () => {
-      expect(scraper.getPageEntries(fakePage).length).to.eql(2);
+      expect(scraper.getEntryElements(fakePage).length).to.eql(2);
+    });
+  });
+  describe('getPageEntries', () => {
+    it('returns an array', () => {
+      expect(scraper.getPageEntries(fakePage)).to.be.an('array');
     });
   });
 });
