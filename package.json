@@ -24,7 +24,7 @@
     "chai-iterator": "^1.1.4",
     "eslint": "^4.18.0",
     "eslint-config-google": "^0.9.1",
-    "express": "^4.16.2",
+    "express": "^4.18.2",
     "jsdom": "^11.6.2",
     "mocha": "^5.0.1",
     "nyc": "^11.4.1",
